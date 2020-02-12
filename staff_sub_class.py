@@ -9,8 +9,10 @@ class Staff(People):
         self.__wage = wage
         self.first_name = first_name
         self.last_name = last_name
-        self.staff_email = self.first_name + '.' + self.last_name + ".@restautant.com"
 
+    def email(self):
+        email_fname = self.first_name[0]
+        return email_fname + '.' + self.last_name + ".@legendsrest.com"
 
 # test
 #staff_chief = Staff('id_1', 'chief', 50000, 'Babish', 'Long')
