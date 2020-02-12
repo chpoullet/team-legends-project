@@ -13,7 +13,7 @@ class Staff(People):
 
 
 # test
-staff_chief = Staff('id_1', 'chief', 50000, 'Babish', 'Long')
+#staff_chief = Staff('id_1', 'chief', 50000, 'Babish', 'Long')
 # staff_driver = Staff ('id_1', 'Delivery', 30000, 'Dhann', 'Tapatieto')
 #
-print(staff_chief.staff_email)
+#print(staff_chief.staff_email)
