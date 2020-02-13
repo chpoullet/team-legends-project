@@ -1,7 +1,17 @@
 class Order():
-    food = {'pizza': 20,
-            'pasta': 30}
-    order_count = 0
+    item1 = {
+        'name': 'pizza',
+        'price': 2.4
+    }
+    item2 = {
+        'name': 'cocacola',
+        'price': 1.4
+    }
+    item3 = {
+        'name': 'tiramisu',
+        'price': 3.4
+    }
+    list_items = [item1, item2, item3]
 
     def __init__(self, customer):
         self.items = []
@@ -14,44 +24,38 @@ class Order():
     # ===================================================
     def add_item_order(self):
         self.items.append(self.customer)
+        while True:
 
-        while self.order_count < 3:
             self.item = input("What would you like to order: ")
             self.items.append(self.item)
-            self.order_count += 1
-        print(self.items)
+            if self.item == '':
+                break
+        print(f'{self.items}')
+
     # ===================================================
     # Loop through self.item skipping index 1 and retrieve
     # all the data based on the Key
     # ===================================================
     def total_price(self):
         total = 0
-        if self.item in Order.food.keys():
-            for item in self.items[1::]:
-                total = total + Order.food[item]
-            print(total)
+        # get the items from the instance
+        # iterate
+        # from each item, get the price
+        # addit to a counter
+        # return
+        for item in Order.list_items:
+            total += item['price']
+        print(f'Your Total is: {round(total)}')
+
     # ===================================================
     # Optional: search and Retrieve customer order
     # ===================================================
-    def search_customer(self):
-        self.customer = input('what customer do you want?')
-        if self.customer in self.items:
-            print(self.items)
+    # def search_customer(self):
+    #     self.customer = input('what customer do you want?')
+    #     if self.customer in self.items:
+    #         print(self.items)
 
 
-
-# customer1 = Order('Hamza')
-# customer1.add_item_order()
-# customer1.total_price()
-# customer1.search_customer()
-# print(customer1.items)
-# #
-# # customer2 = Order('Jason')
-# # customer2.add_item_order()
-# # customer2.total_price()
-#
-# customer1.search_customer()
-# # customer2.search_customer()
-#
-# print(customer1.items)
-# # print(customer2.items)
+customer1 = Order('Hamza')
+customer1.add_item_order()
+customer1.total_price()
