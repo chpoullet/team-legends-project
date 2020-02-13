@@ -18,7 +18,7 @@ Create a delivery app for an owner of a restaurant, that take orders and display
 
 ## Aims of project:
 - To create an app that can take in orders
-- Apply Agile and scrum methodology with in a team of 5
+- Apply Agile and scrum methodology within a team of 5
 - Using all topics above in project such as OOP
 
 
