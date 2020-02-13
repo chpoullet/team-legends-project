@@ -10,7 +10,6 @@ Create a delivery app for an owner of a restaurant, that take orders and display
 - Hamza El Aouane 
 
 #### Topics to be applied in project: 
-- API
 - OOP
 - SQL
 - Git &  Github
