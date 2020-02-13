@@ -12,8 +12,8 @@ class Staff(People):
         self.staff_email = self.first_name + '.' + self.last_name + ".@restautant.com"
 
 
-
-staff_chief = Staff('id_1', 'chief', 50000, 'Babish', 'Long')
-staff_driver = Staff ('id_1', 'Delivery', 30000, 'Dhann', 'Tapatieto')
-
-print(staff_chief.staff_email)
+# test
+#staff_chief = Staff('id_1', 'chief', 50000, 'Babish', 'Long')
+# staff_driver = Staff ('id_1', 'Delivery', 30000, 'Dhann', 'Tapatieto')
+#
+#print(staff_chief.staff_email)
