@@ -13,20 +13,49 @@ drink2 = Drink('Smoothie', 2.5, ['orange'])
 class Order:
     __order_integer = 1
 
-    def __init__(self, customer, order_id):
+    def __init__(self, customer):
         self.customer = customer
         self.order_id = Order.__order_integer
         Order.__order_integer += 1
         self.order_contents = []
 
-    # def combo_discount(self):
-    #     if self.order_contents :
-    #         for k in drinks_menu:
-    #         discount_rate = 0.2
-    #         if j[3] == 'Meal' and k[3] == 'Meal':
-    #             total = j[2] + k[2]
-    #             discount = total * discount_rate
-    #             print("{}:{} {}:{} total to pay = £{}, instead of £{}".format(j[0], j[2], k[0], k[2], discount, total))
+    def add_to_order(self, item):
+        self.order_contents.extend(item)
+
+    def combo_discount(self):
+        if (any(isinstance(item, Food) for item in self.order_contents)) and (any(isinstance(item, Drink) for item in self.order_contents)):
+            order_total = 0
+            for i in range(0, len(self.order_contents)):
+                price = self.order_contents[i].price
+                order_total = order_total + price
+            return "{0:.2f}".format(float(order_total) * 0.8)
+        else:
+            order_total = 0
+            for i in range(0, len(self.order_contents)):
+                price = self.order_contents[i].price
+                order_total = order_total + price
+            return "{0:.2f}".format(order_total)
+
+
+
+
+
+
+
+order1 = Order('jeremy')
+order1.add_to_order([main1, drink1])
+print(order1.combo_discount())
+
+order2 = Order('geoff')
+order2.add_to_order([main1, main2])
+order2.combo_discount()
+
+            # for k in drinks_menu:
+            # discount_rate = 0.2
+            # if j[3] == 'Meal' and k[3] == 'Meal':
+            #     total = j[2] + k[2]
+            #     discount = total * discount_rate
+            #     print("{}:{} {}:{} total to pay = £{}, instead of £{}".format(j[0], j[2], k[0], k[2], discount, total))
 
 
 # if order contains an object 'Food' and an object 'Drink'

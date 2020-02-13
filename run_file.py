@@ -17,6 +17,5 @@ main5 = Food('Spaghetti', 6.00, ['Spaghetti pasta', 'ragu sauce', 'cheese', 'her
 drink1 = Drink('Coke', 2, ['caffeine'])
 drink2 = Drink('Smoothie', 2.5, ['orange'])
 
-for i in range (0, len(MenuItems.menu_items_list)):
-    print(MenuItems.menu_items_list[i])
+MenuItems.print_me_the_menu()
 

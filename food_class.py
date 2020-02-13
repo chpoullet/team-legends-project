@@ -10,6 +10,12 @@ class MenuItems:
         MenuItems.add_menu_item_to_list(self)
 
     @classmethod
+    def print_me_the_menu(cls):
+        for i in range(0, len(cls.menu_items_list)):
+            obj = (cls.menu_items_list[i])
+            print(vars(obj))
+
+    @classmethod
     def add_menu_item_to_list(cls, item):
         cls.menu_items_list.append(item)
 
