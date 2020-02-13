@@ -5,6 +5,7 @@ from db_products import DBProducts
 
 employees = DBEmployees()
 customers = DBCustomers()
+products = DBProducts()
 
 
 print("Welcome to the interface. What would you like to do?")
@@ -16,7 +17,8 @@ while True:
 
     if 'help' in greeting:
         print("Type 'employees' to enter the employee section\n"
-              "Type 'customers' to enter the customer section\n")
+              "Type 'customers' to enter the customer section\n"
+              "Type 'products' to enter the product section\n")
 
 
     elif 'employee' in greeting:
@@ -24,12 +26,14 @@ while True:
         while True:
             employee_input = input("You are in the employee section.\n"
                                "Type 'help' for a list of commands for this section\n").lower().strip()
+
             if employee_input == 'back':
                 break
 
             elif employee_input == 'help':
                 print("Type 'view all' to view all employees \n"
                       "Type 'view employee' to view a specific employee \n"
+                      "Type 'input employee' to input a new employee\n"
                       "Type 'back' to go back to the home section\n")
 
             elif employee_input == 'view all':
@@ -39,12 +43,41 @@ while True:
                 idd = int(input('Input an ID:  '))
                 print(employees.read_employerid(idd))
 
-            elif employee_input == 'create employee':
+            elif employee_input == 'input employee':
                 employees.create_employee()
+
+            else:
+                print("Incorrect input, please try again.\n")
 
 
     elif 'menu' or 'product' in greeting:
-        product_input = input("You are in the product section:  \n")
+        while True:
+            product_input = input("You are in the product section.\n"
+                                  "Type 'help' for a list of commands for this section\n").lower().strip()
+
+            if product_input == 'back':
+                break
+
+            elif product_input == 'help':
+                print("Type 'view all' to view all products\n"
+                      "Type 'view employee' to view a specific product\n"
+                      "Type 'create product' to create a product\n"
+                      "Type 'back' to go back to the home section\n")
+
+            elif product_input == 'view all':
+                products.print_allproducts()
+
+            elif product_input == 'view product':
+                idd = int(input('Input an ID:   '))
+                print(products.read_productid(idd))
+
+            elif product_input == 'create product':
+                products.create_product()
+
+            else:
+                print("Incorrect input, please try again.")
+
+
 
     elif 'customer' in greeting:
         while True:
@@ -65,6 +98,8 @@ while True:
                 idd = int(input('Input an ID:  '))
                 print(customers.read_customerid(idd))
 
+            else:
+                print("Incorrect input, please try again.")
 
 
 
